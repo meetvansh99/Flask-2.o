@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block name %}Flask WTF form
+        
+    {% endblock %}</title>
+    <style>
+        body{
+            background-color: black;
+            color: azure;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flask-WTF Registration</h1>
+    {% block content %}
+        
+    {% endblock %}
+
+    {% with messages=get_flashed_messages(with_categories=True)  %}
+        {% if messages %}
+      
+            {% for category,me in messages %}
+                
+                <p style="color: chartreuse;">{{me}}</p>
+            {% endfor %}
+
+       
+            
+        {% endif %}
+    {% endwith %}
+</body>
+</html>
